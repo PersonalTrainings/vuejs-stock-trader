@@ -19,10 +19,10 @@
         </div>
         <div class="pull-right">
           <button
-            class="btn btn-success"
+            :class="['btn', insufficientFunds ? 'btn-light' : 'btn-success']"
             :disabled="buttonDisabled"
             @click="buyStock">
-            {{ insufficientFunds ? 'Insufficient Funds' : 'Buy' }}
+            Buy
           </button>
         </div>
       </div>
@@ -68,12 +68,5 @@ export default {
 <style scoped>
 .danger {
   border: 1px solid red;
-  width: 170px;
-}
-/* if display width is smaller 1199px  */
-@media (max-width: 1199px) {
-  .danger {
-    width: 100px;
-  }
 }
 </style>
